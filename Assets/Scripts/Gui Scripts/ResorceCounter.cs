@@ -25,34 +25,34 @@ public class ResorceCounter : MonoBehaviour {
 		CurrentUnit.text  = CurrentUnitCount + "";
 		MaxUnit.text  = MaxUnitsCount + "";
 	}
-	
+	//returns the uranium left
 	public int getUranium(){
 		return UraniumCount;
 	}
-
+	//returns the tiranium left
 	public int getTitanium(){
 		return TitaniumCount;
 	}
-
+	//returns the current ammount of units
 	public int getCurrentUnitCount(){
 		return CurrentUnitCount;
 	}
-
+	//changes the current uranium value accepts negetive numbers aswell
 	public void changeUranium(int x){
 		UraniumCount = UraniumCount + x;
 		Uranium.text = UraniumCount + "";
 	}
-
+	//changes the current titanium value accepts negetive numbers aswell
 	public void changeTitanium(int x){
 		TitaniumCount = UraniumCount + x;
 		Titanium.text = TitaniumCount + "";
 	}
-
+	//adds one to the current ammount of units
 	public void unitCreated(){
 		CurrentUnitCount++;
 		CurrentUnit.text = CurrentUnitCount + "";
 	}
-
+	//subtracts one from the current ammount of units
 	public void unitDestroyed(){
 		CurrentUnitCount--;
 		CurrentUnit.text = CurrentUnitCount + "";
