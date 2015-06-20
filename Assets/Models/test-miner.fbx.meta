@@ -1,21 +1,21 @@
 fileFormatVersion: 2
-guid: b7fd679bd589f40488c32b46b8482b15
-timeCreated: 1434751963
+guid: 9728348e9c8d5ad4b9c10159bcb6e9fd
+timeCreated: 1434754194
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: Camera
-    100002: Cone
+    100002: Cube
     100004: Lamp
     100006: //RootNode
     400000: Camera
-    400002: Cone
+    400002: Cube
     400004: Lamp
     400006: //RootNode
-    2300000: Cone
-    3300000: Cone
-    4300000: Cone
+    2300000: Cube
+    3300000: Cube
+    4300000: Cube
   materials:
     importMaterials: 1
     materialName: 0
@@ -25,10 +25,6 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
-    animationImportErrors: 
-    animationImportWarnings: 
-    animationRetargetingWarnings: 
-    animationDoRetargetingWarnings: 0
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
