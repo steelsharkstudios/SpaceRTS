@@ -38,7 +38,7 @@ public class MainMenuGUIScript : MonoBehaviour {
 		GUI.Label(titleRect, titleContent);
 		
 		if (GUI.Button(newGameRect, newGameContent))
-			Debug.Log ("Heeey");
+			Application.LoadLevel("SpaceRTS");
 		
 		if (GUI.Button(creditsRect, creditsContent)) {
 
@@ -47,6 +47,6 @@ public class MainMenuGUIScript : MonoBehaviour {
 		}
 		
 		if (GUI.Button(quitRect, quitContent))
-			Debug.Log ("Heeey");
+			System.Diagnostics.Process.GetCurrentProcess().Kill();
 	}
 }
