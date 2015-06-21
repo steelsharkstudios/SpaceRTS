@@ -29,22 +29,19 @@ public class CameraMinimapGUIScript : MonoBehaviour {
 		Vector3 viewportPosition = new Vector3(0, 0, camPosition.y);
 
 		viewportPosition.y = Camera.main.rect.height;
-		Vector3 topLeft = Camera.main.ViewportToWorldPoint(viewportPosition);
+		Vector3 worldPosTopLeft = Camera.main.ViewportToWorldPoint(viewportPosition);
 
 		viewportPosition.x = Camera.main.rect.width;
 		viewportPosition.y = 0;
-		Vector3 bottomRight = Camera.main.ViewportToWorldPoint(viewportPosition);
+		Vector3 worldPosBottomRight = Camera.main.ViewportToWorldPoint(viewportPosition);
 
-		Vector3 screenPoint1 = minimapCamera.WorldToScreenPoint(topLeft);
-		Vector3 screenPoint2 = minimapCamera.WorldToScreenPoint(bottomRight);
+		Vector3 screenPosTopLeft = minimapCamera.WorldToScreenPoint(worldPosTopLeft);
+		Vector3 screenPosBottomRight = minimapCamera.WorldToScreenPoint(worldPosBottomRight);
 
-		Debug.Log(screenPoint1);
-		Debug.Log(screenPoint2);
-
-		float xPos1 = screenPoint1.x;
-		float yPos1 = Screen.height - screenPoint1.y;
-		float xPos2 = screenPoint2.x - screenPoint1.x;
-		float yPos2 = screenPoint1.y - screenPoint2.y;
+		float xPos1 = screenPosTopLeft.x;
+		float yPos1 = Screen.height - screenPosTopLeft.y;
+		float xPos2 = screenPosBottomRight.x - screenPosTopLeft.x;
+		float yPos2 = screenPosTopLeft.y - screenPosBottomRight.y;
 
 		GUI.Box(new Rect(xPos1, yPos1, xPos2, yPos2), new GUIContent());
 
