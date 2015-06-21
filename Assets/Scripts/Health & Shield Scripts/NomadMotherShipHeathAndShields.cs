@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class NomadMotherShipHeathAndShields : MonoBehaviour {
+
 	private int shields;
 	private int maxShields;
 	private int maxHealth;
@@ -12,53 +13,58 @@ public class NomadMotherShipHeathAndShields : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
 		int shields = 500;
 		int health = 1500;
 		int maxShields = shields;
 		int maxHealth = health;
 		rateOfShieldRecharge = (int)((shields / 100) * 5);
 	}
+	
+	// Update is called once per frame
+	void Update (){
 
-	void Update(){
-		shieldRecharge ();
+		shieldRecharge();
 	}
 
-	public void damage(int damage){
+	public void damage(int damage) {
+
 		int damageleft = 0;
 		int damageholder = 0;
 		timeOfLastDamage = Time.time;
-		//checks to see if the shields can take the dammage going to be given
+
+		// Checks to see if the shields can take the dammage going to be given
 		if (damage > shields && shields != 0) {
+
 			damageholder = damage;
 			damage = damage - shields;
 			damageleft = damage;
-			damage = damageholder
+			damage = damageholder;
 		}
-		//gives damage to the shield
-		if(damageleft == 0){
+
+		// Gives damage to the shield
+		if (damageleft == 0)
 				shields = shields - damage;
-		}else{//gives damage to the structure
-			if((health - damageleft) > 0){
+		else { // Gives damage to the structure
+
+			if((health - damageleft) > 0) {
+
 				shields = 0;
 				health = health - damageleft;
-			}else{
-				Destroyed();
-			}
+			} else
+				this.Destroyed();
 		}
 	}
 
-	void shieldRecharge(){
-		if((Time.time - timeOfLastDamage) >= 5){
-			if(shields != maxShields){
-				shields = shields + rateOfShieldRecharge;
-			}
-		}
+	void shieldRecharge() {
+
+		if ((Time.time - timeOfLastDamage) >= 5 && shields != maxShields)
+			shields = shields + rateOfShieldRecharge;
 	}
 
-	//called when health == 0, invokes the game over script
-	void Destroyed(){
+	// Called when health == 0, invokes the game over script
+	void Destroyed() {
+
 
 	}
-
-
 }
