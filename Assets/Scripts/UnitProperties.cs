@@ -8,7 +8,8 @@ public class UnitProperties : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
-		GameObject minimapIcon = GameObject.Instantiate(minimapIconPrefab, transform.position, Quaternion.identity);
+		GameObject minimapIcon = (GameObject) 
+			GameObject.Instantiate(minimapIconPrefab, transform.position, Quaternion.identity);
 	}
 	
 	// Update is called once per frame
