@@ -3,12 +3,12 @@ using System.Collections;
 
 public class UnitProperties : MonoBehaviour {
 
-	public GameObject minimapIcon;
+	public GameObject minimapIconPrefab;
 
 	// Use this for initialization
 	void Start () {
 		
-		GameObject.Instantiate(minimapIcon, transform.position, Quaternion.identity);
+		GameObject minimapIcon = GameObject.Instantiate(minimapIconPrefab, transform.position, Quaternion.identity);
 	}
 	
 	// Update is called once per frame
