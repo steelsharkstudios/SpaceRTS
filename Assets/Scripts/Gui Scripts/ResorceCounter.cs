@@ -18,7 +18,7 @@ public class ResorceCounter : MonoBehaviour {
 		UraniumCount = 250;
 		TitaniumCount = 500;
 		CurrentUnitCount = 0;
-		MaxUnitsCount = 200;
+		MaxUnitsCount = 10;
 
 		Uranium.text = UraniumCount + "";
 		Titanium.text = TitaniumCount + "";
@@ -48,14 +48,18 @@ public class ResorceCounter : MonoBehaviour {
 		Titanium.text = TitaniumCount + "";
 	}
 	//adds one to the current ammount of units
-	public void unitCreated(){
-		CurrentUnitCount++;
+	public void unitCreated(int x){
+		CurrentUnitCount = CurrentUnitCount + x;
 		CurrentUnit.text = CurrentUnitCount + "";
 	}
 	//subtracts one from the current ammount of units
-	public void unitDestroyed(){
-		CurrentUnitCount--;
+	public void unitDestroyed(int x){
+		CurrentUnitCount = CurrentUnitCount - x;
 		CurrentUnit.text = CurrentUnitCount + "";
 	}
-
+	//used for addind and subtracting from the maxsupply
+	public void changeMaxUnits(int x){
+		MaxUnitsCount = MaxUnitsCount + x;
+		MaxUnit.text = MaxUnitsCount + "";
+	}
 }
